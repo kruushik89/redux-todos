@@ -1,3 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+}
+
+.todos_wrap {
+  width: 800px;
+  margin: 25px auto 0;
+}
+
+.card_todo {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
 }
