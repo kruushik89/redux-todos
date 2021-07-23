@@ -5,3 +5,7 @@ let instance = axios.create({
 });
 
 export const getTodos = () => instance('/get-todos');
+
+export const createTodos = (title, description) => instance.post('/create-todo', JSON.stringify({title, description}),
+    {headers: { 'Content-Type':'application/json'}}
+    );
