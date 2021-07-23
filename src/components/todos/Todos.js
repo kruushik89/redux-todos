@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {deleteTodo, getTodos} from "../../service/todosServices";
+import {changeTodoStatus, deleteTodo, getTodos} from "../../service/todosServices";
 import {useDispatch, useSelector} from "react-redux";
 import TodoItem from "./TodoItem";
 
@@ -16,12 +16,17 @@ const Todos = () => {
         dispatch({type: 'DELETE_TODO', payload: id})
     }
 
+    const onChangeTodoStatus = async (id, completed) => {
+        const data = await changeTodoStatus(id, completed).then(value => value.data);
+        dispatch({type: 'STATUS_TODO', payload: data})
+    }
+
     useEffect(() => {
         fetchTodos()
     }, [])
     return (
         <div className={'todos_wrap'}>
-            {todos.map(value => <TodoItem key={value.id} item={value} onDeleteTodo={onDeleteTodo}/>)}
+            {todos.map(value => <TodoItem key={value.id} item={value} onDeleteTodo={onDeleteTodo} onChangeTodoStatus={onChangeTodoStatus}/>)}
         </div>
     )
 }

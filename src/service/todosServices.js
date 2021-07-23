@@ -11,3 +11,8 @@ export const createTodos = (title, description) => instance.post('/create-todo',
     );
 
 export const deleteTodo = (id) => instance.delete('/delete-todo/'+ id)
+
+export const changeTodoStatus = (id, completed) => instance.patch('/update-todo/'+ id,
+    JSON.stringify({completed: !completed}),
+    {headers: { 'Content-Type':'application/json'}}
+    )
