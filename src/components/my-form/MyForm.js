@@ -19,6 +19,8 @@ const MyForm = () => {
         if (!title || !description) return;
         e.preventDefault();
         onCreateTodo();
+        dispatch({type: 'TITLE_VALUE', payload: ''})
+        dispatch({type: 'DESCRIPTION_VALUE', payload: ''})
     }
 
     return (

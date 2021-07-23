@@ -9,3 +9,5 @@ export const getTodos = () => instance('/get-todos');
 export const createTodos = (title, description) => instance.post('/create-todo', JSON.stringify({title, description}),
     {headers: { 'Content-Type':'application/json'}}
     );
+
+export const deleteTodo = (id) => instance.delete('/delete-todo/'+ id)
