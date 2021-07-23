@@ -5,8 +5,8 @@ import TodoItem from "./TodoItem";
 
 const Todos = () => {
     const dispatch = useDispatch();
-    let {todos} = useSelector(state => state);
-    console.log(todos);
+    const {todos} = useSelector(state => state.todoReducer);
+
     const fetchTodos = async () => {
         await getTodos().then(value => dispatch({type: 'GET_TODOS', payload: value.data}))
     }

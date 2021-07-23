@@ -1,7 +1,6 @@
 import React from 'react';
 
 const TodoItem = ({item}) => {
-    console.log(item);
     return (
         <div className={'card_todo'}>
             <h4>{item.title}</h4>
