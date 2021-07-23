@@ -16,3 +16,8 @@ export const changeTodoStatus = (id, completed) => instance.patch('/update-todo/
     JSON.stringify({completed: !completed}),
     {headers: { 'Content-Type':'application/json'}}
     )
+
+export const changeTodo = (id, title, description) => instance.patch('/update-todo/'+ id,
+    JSON.stringify({title, description}),
+    {headers: { 'Content-Type':'application/json'}}
+)

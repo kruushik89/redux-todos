@@ -23,6 +23,8 @@ const MyForm = () => {
         dispatch({type: 'DESCRIPTION_VALUE', payload: ''})
     }
 
+
+
     return (
         <form className={'form'} onSubmit={onSubmitForm}>
             <div className="form_item">

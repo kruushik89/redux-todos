@@ -14,6 +14,11 @@ export const todoReducer = (state = initialState, action) => {
             const find = state.todos.find(value => value.id === action.payload.id);
             find.completed = action.payload.completed;
             return {...state}
+        case 'TITLE_DESCRIPTION_TODO':
+            const findTitle = state.todos.find(value => value.id === action.payload.id);
+            findTitle.title = action.payload.title;
+            findTitle.description = action.payload.description;
+            return {...state}
         default:
             return state
     }

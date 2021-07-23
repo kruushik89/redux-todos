@@ -3,4 +3,4 @@
 3. Додавати todo+
 4. Видаляти todo+
 5. Змінювати статус+
-6. Змінювати поля Title & Description
+6. Змінювати поля Title & Description+
