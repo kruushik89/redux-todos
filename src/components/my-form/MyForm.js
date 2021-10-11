@@ -14,7 +14,6 @@ const MyForm = () => {
         const data = await createTodos(title, description).then(value => value.data);
         dispatch({type: 'CREATE_TODO', payload: data})
     }
-
     const onSubmitForm = (e) => {
         if (!title || !description) return;
         e.preventDefault();
@@ -22,9 +21,6 @@ const MyForm = () => {
         dispatch({type: 'TITLE_VALUE', payload: ''})
         dispatch({type: 'DESCRIPTION_VALUE', payload: ''})
     }
-
-
-
     return (
         <form className={'form'} onSubmit={onSubmitForm}>
             <div className="form_item">
